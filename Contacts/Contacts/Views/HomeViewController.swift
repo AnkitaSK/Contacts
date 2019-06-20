@@ -8,13 +8,19 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
+    
+    var presentor: ViewToPresenterProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        presentor?.startfetchingContacts()
     }
 
 
 }
 
+extension HomeViewController: PresenterToViewProtocol {
+    
+}
