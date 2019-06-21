@@ -36,6 +36,6 @@ extension HomeViewController: PresenterToViewProtocol {
 
 extension HomeViewController: ContactsTableViewDelegate {
     func navigateToDetailViewOf(_ contact: ContactModel) {
-        
+        presentor?.navigateToDetailViewController()
     }
 }

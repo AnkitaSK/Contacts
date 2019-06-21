@@ -22,6 +22,7 @@ class ContactsPresenter: ViewToPresenterProtocol {
     
     func navigateToDetailViewController() {
 //        TODO
+        router?.navigateToDetailViewController()
     }
     
     func addNewContact() {

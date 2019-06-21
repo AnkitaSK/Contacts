@@ -26,6 +26,7 @@ class ContactRouter: PresenterToRouterProtocol {
     
     func navigateToDetailViewController() {
 //        TODO navigation to detail
+        
     }
     
     static var mainStoryboard: UIStoryboard {
