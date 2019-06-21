@@ -11,9 +11,13 @@ import UIKit
 class HomeViewController: UIViewController {
     
     var presentor: ViewToPresenterProtocol?
+    
+    @IBOutlet weak var contactTableView: ContactsTableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        contactTableView.contactsTableViewDelegate = self
         
         presentor?.startfetchingContacts()
     }
@@ -22,5 +26,16 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: PresenterToViewProtocol {
-    
+    func displayFetchedContacts(_ contacts: [ContactModel]) {
+        DispatchQueue.main.async {
+            self.contactTableView.dataSourceArray = contacts
+        }
+    }
+}
+
+
+extension HomeViewController: ContactsTableViewDelegate {
+    func navigateToDetailViewOf(_ contact: ContactModel) {
+        
+    }
 }

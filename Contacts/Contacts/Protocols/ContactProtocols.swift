@@ -19,7 +19,7 @@ protocol ViewToPresenterProtocol {
 }
 
 protocol PresenterToViewProtocol {
-    
+    func displayFetchedContacts(_ contacts: [ContactModel])
 }
 
 protocol PresenterToRouterProtocol {
@@ -33,5 +33,11 @@ protocol PresenterToInteractorProtocol {
 }
 
 protocol InteractorToPresenterProtocol {
-    
+    func fetchedContacts(_ contacts: [ContactModel])
+}
+
+
+protocol ServiceCallDelegate: class {
+    func receivedData(_ data: Data)
+    func receivedError(_ error: Error)
 }

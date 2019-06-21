@@ -17,14 +17,29 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uY9-gQ-Qox" customClass="ContactsTableView" customModule="Contacts" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="uY9-gQ-Qox" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="IVP-LI-m59"/>
+                            <constraint firstItem="uY9-gQ-Qox" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dVh-wR-Mvg"/>
+                            <constraint firstAttribute="bottom" secondItem="uY9-gQ-Qox" secondAttribute="bottom" id="pIJ-yI-HWQ"/>
+                            <constraint firstItem="uY9-gQ-Qox" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="y88-jx-A2X"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="7AA-uc-WcH"/>
+                    <connections>
+                        <outlet property="contactTableView" destination="uY9-gQ-Qox" id="i93-Ws-RLl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="672" y="-660"/>
+            <point key="canvasLocation" x="671.01449275362324" y="-660.26785714285711"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kN0-ob-7qc">

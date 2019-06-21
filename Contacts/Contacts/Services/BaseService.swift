@@ -39,7 +39,7 @@ class BaseService: NSObject {
     var headers: HTTPHeaders = [
         "Content-Type": "application/json"
     ]
-    
+    weak var serviceCallDelegate: ServiceCallDelegate?
     override init() {
         super.init()
     }
@@ -71,7 +71,8 @@ class BaseService: NSObject {
         
         let dataTask = defaultSession.dataTask(with: request) { (data, response, error) -> Void in
             if let error = error {
-//                TODO handle error
+//                 handle error
+                self.serviceCallDelegate?.receivedError(error)
             } else if let httpResponse = response as? HTTPURLResponse {
                 do {
                     if let data = data, let json = try JSONSerialization.jsonObject(with: data) as? [String: Any] {
@@ -85,7 +86,9 @@ class BaseService: NSObject {
 //                    TODO handle error
                 } else {
 //                    TODO handle response -- delegate call to interactor
-                    
+                    if let responseData = data {
+                        self.serviceCallDelegate?.receivedData(responseData)
+                    }
                 }
             } else {
                 defaultSession.finishTasksAndInvalidate()

@@ -32,5 +32,7 @@ class ContactsPresenter: ViewToPresenterProtocol {
 }
 
 extension ContactsPresenter: InteractorToPresenterProtocol {
-    
+    func fetchedContacts(_ contacts: [ContactModel]) {
+        view?.displayFetchedContacts(contacts)
+    }
 }
